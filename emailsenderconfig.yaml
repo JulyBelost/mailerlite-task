@@ -1,0 +1,9 @@
+apiVersion: email.example.com/v1
+kind: EmailSenderConfig
+metadata:
+  name: mailersend-config
+  namespace: default
+spec:
+  apiTokenSecretRef: mailersend-secret
+  senderEmail: MS_TodkFD@trial-x2p0347jkx74zdrn.mlsender.net
+

@@ -1,0 +1,10 @@
+apiVersion: email.example.com/v1
+kind: Email
+metadata:
+  name: test-email
+  namespace: default
+spec:
+  senderConfigRef: mailersend-config
+  recipientEmail: julybelost@gmail.com
+  subject: "Test Email"
+  body: "This is a test email."

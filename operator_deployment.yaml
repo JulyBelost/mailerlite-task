@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-operator
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-operator
+  template:
+    metadata:
+      labels:
+        app: email-operator
+    spec:
+      serviceAccountName: email-operator
+      containers:
+      - name: email-operator
+        image: 300216434589.dkr.ecr.us-west-2.amazonaws.com/email-operator:latest
+        resources:
+          limits:
+            cpu: "0.8"
+            memory: "256Mi"
+          requests:
+            cpu: "0.5"
+            memory: "128Mi"
